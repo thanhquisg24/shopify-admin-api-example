@@ -15,7 +15,6 @@ import {
   ZaloZnsShipment,
 } from './dto/zalo-zns-dto';
 import { ZaloHookService } from './zalo-hook.service';
-import { ZaloScheduleService } from './zalo-schedule.service';
 
 @ApiTags('Zalo hook')
 @Controller('api/v1/zalo-hook')
@@ -24,7 +23,6 @@ export class ZaloHookController {
     @Inject(WINSTON_MODULE_NEST_PROVIDER)
     private readonly logger: LoggerService,
     private readonly service: ZaloHookService,
-    private readonly zaloSchedule: ZaloScheduleService,
   ) {}
 
   @Get()
@@ -59,11 +57,5 @@ export class ZaloHookController {
   @Post('post-zalo-zns')
   postSendZaloZns(@Body() zaloZnsPayload: ZaloZnsDTO) {
     return this.service.sendZaloZns(zaloZnsPayload);
-  }
-
-  @Post('call-zalo-10k-schedule')
-  call10kSchedule() {
-    this.zaloSchedule.schedule10kZnsMessage();
-    return 'success';
   }
 }

@@ -31,7 +31,7 @@ async function bootstrap() {
   // app.useGlobalFilters(new HttpErrorFilter());
   if (configService.get('NODE_ENV') !== 'production-demo') {
     const config = new DocumentBuilder()
-      .setTitle('A2e hook APIs')
+      .setTitle('shopify admin api example')
       .setDescription('API Documentation description')
       .setVersion('1.0')
       .addBearerAuth()
@@ -41,7 +41,7 @@ async function bootstrap() {
   }
   app.use(json({ limit: '16mb' }));
   app.use(urlencoded({ extended: true, limit: '16mb' }));
-  const defaultPort = configService.get('PORT') || 3300;
+  const defaultPort = configService.get('PORT') || 3100;
   await app.listen(defaultPort);
 }
 bootstrap();
