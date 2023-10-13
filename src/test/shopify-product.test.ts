@@ -11,7 +11,6 @@ function main() {
       data,
     );
   });
-
   console.log('hello');
 }
 
