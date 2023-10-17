@@ -29,9 +29,15 @@ function createCustomer() {
   return shopify.customer.create(customer);
 }
 
-function searchCustomerByEmail(email: string, id: number) {
+// function searchCustomerByEmail(email: string, id: number) {
+//   // "email:bob.norman@mail.example.com"
+//   const params = { query: `email:${email} id:${id}` };
+//   return shopify.customer.search(params);
+// }
+
+function searchCustomerByEmail(email: string) {
   // "email:bob.norman@mail.example.com"
-  const params = { query: `email:${email} id:${id}` };
+  const params = { query: `email:${email}` };
   return shopify.customer.search(params);
 }
 
@@ -47,7 +53,7 @@ function main() {
   //   console.log('🚀 ~ file: createCustomer ~ data:', data);
   // });
 
-  searchCustomerByEmail('steve.lastnameson@example.com', 7427220930874).then(
+  searchCustomerByEmail('thanhquisg24@gmail.com').then(
     (data) => {
       console.log('🚀 ~ file:searchCustomerByEmail ~ data:', data);
     },
