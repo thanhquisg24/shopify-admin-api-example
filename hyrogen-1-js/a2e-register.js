@@ -14,7 +14,7 @@ async function postA2ERegister(data = {}) {
     });
     let result = null;
     if (response.ok) {
-      result = await response.json();
+      result = await response.text();
       console.log('Success:', result);
       return true;
     } else {
