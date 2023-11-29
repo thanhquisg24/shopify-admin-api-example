@@ -1,4 +1,5 @@
 import shopify from '../modules/shopify/shopify-ins';
+
 function getCustomerById(id: number) {
   return shopify.customer.get(id);
 }
@@ -147,18 +148,16 @@ async function updateA2eCustomerFlow(id: number) {
 }
 
 async function main() {
-  const c = await createCustomerWithoutAddress();
-  console.log('🚀 ~ file: shopify-customer.test.ts:151 ~ main ~ c:', c);
-  // await getCustomerById(7427220930874).then((data) => {
-  //   console.log(
-  //     '🚀 ~ file: shopify-customer.test.ts:9 ~ getCustomerById ~ data:',
-  //     data,
-  //   );
-  //   console.log(
-  //     '🚀 ~ file: shopify-customer.test.ts:73 ~ getCustomerById ~ data:',
-  //     data.addresses,
-  //   );
-  // });
+  await getCustomerById(7420915876154).then((data) => {
+    console.log(
+      '🚀 ~ file: shopify-customer.test.ts:9 ~ getCustomerById ~ data:',
+      data,
+    );
+    console.log(
+      '🚀 ~ file: shopify-customer.test.ts:73 ~ getCustomerById ~ data:',
+      data.addresses,
+    );
+  });
   console.log('NextStep---------------------------------------------');
   // createCustomer().then((data) => {
   //   console.log('🚀 ~ file: createCustomer ~ data:', data);
